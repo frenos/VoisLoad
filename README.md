@@ -9,6 +9,7 @@ Das Programm VoisLoad! bietet die Möglichkeit Beiträge des Senders "Vor Ort in
 Der Workflow ist sehr einfach, komfortabel und quasi selbsterklärend.
 
 ![Beitragsliste](./img/1.png)
+
 Screenshot der Beitragsliste.
 
 Hier können die verfügbaren Beiträge angesehen und die Liste aktualisiert kann aktualisiert werden. Die Update-Funktion hat folgende Besonderheit:
@@ -16,7 +17,9 @@ Hier können die verfügbaren Beiträge angesehen und die Liste aktualisiert kan
 > Die Beiträge sind nicht komplett aufsteigend durchnummeriert sondern es sind immer wieder "Lücken" mit verschiedenen Größen vorhanden. Default werden maximal 5 nicht vorhandene Beiträge übersprungen. Um auch größere Lücken überpringen zu können wird der Wert zur Laufzeit mit jedem Klick auf Update verdoppelt (Bsp. *5, 10, 20, 40...*). Ein Neustart resetet die Laufweite wieder auf 5.
 
 Markierte Beiträge werden mit einem Klick auf "Download" in die Warteschlange übernommen und es wird zum Downloadbereich gewechselt.
+
 ![Downloads](./img/2.png)
+
 Screenshot der Downloadübersicht
 
 ##Anwendungsfall##
