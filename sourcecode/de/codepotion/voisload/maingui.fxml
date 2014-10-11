@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.codepotion.voisload.Vois">
+   <children>
+      <Accordion fx:id="accordionView" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <panes>
+          <TitledPane fx:id="beitragPane" animated="true" text="Beitraege">
+               <content>
+                  <BorderPane>
+                     <center>
+                        <VBox alignment="CENTER" prefHeight="189.0" prefWidth="590.0">
+                           <children>
+                              <TableView fx:id="myTable" prefHeight="212.0" prefWidth="580.0" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="beitragNummer" editable="false" maxWidth="500.0" prefWidth="75.0" text="bID" />
+                                  <TableColumn fx:id="titel" editable="false" prefWidth="523.0" text="Titel" />
+                                  <TableColumn fx:id="kategorie" editable="false" maxWidth="900.0" minWidth="-1.0" prefWidth="75.0" text="Kategorie" />
+                                </columns>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <HBox alignment="TOP_RIGHT" minHeight="45.0" minWidth="278.0" prefHeight="45.0" prefWidth="593.0" spacing="5.0">
+                                 <children>
+                                    <ProgressIndicator fx:id="updateProgress" maxHeight="25.0" maxWidth="25.0" prefHeight="57.0" prefWidth="57.0" visible="false" />
+                                    <Button mnemonicParsing="false" onAction="#updateBeitraege" text="Update" />
+                                    <Button layoutX="546.0" layoutY="312.0" mnemonicParsing="false" onAction="#startDownloads" text="Download" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </content>
+          </TitledPane>
+          <TitledPane fx:id="downloadsPane" animated="true" text="Downloads">
+               <content>
+                  <TableView fx:id="downloadsTable">
+                    <columns>
+                      <TableColumn fx:id="titelCol" minWidth="50.0" prefWidth="500.0" text="Datei" />
+                        <TableColumn fx:id="progressCol" prefWidth="75.0" text="Progress" />
+                        <TableColumn fx:id="statusCol" prefWidth="75.0" text="Status" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </content>
+          </TitledPane>
+          <TitledPane animated="true" text="Settings">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="19.0" text="Aktuellster Beitrag:" />
+                        <TextField fx:id="settings_beitrag" layoutX="167.0" layoutY="15.0" prefHeight="25.0" prefWidth="113.0" />
+                        <Button fx:id="settings_setbeitrag" layoutX="293.0" layoutY="15.0" mnemonicParsing="false" onAction="#saveAktuellsterBeitrag" text="set" />
+                        <TextField fx:id="settings_dlFolder" layoutX="167.0" layoutY="50.0" prefHeight="25.0" prefWidth="431.0" onMouseClicked="#chooseDownloadPath"/>
+                        <Label layoutX="14.0" layoutY="54.0" text="Aktueller Downloadordner:" />
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</AnchorPane>
